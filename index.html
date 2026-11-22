@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luna &amp; Lace Salon — Hair Salon in Austin, TX</title>
+<meta name="description" content="Luna & Lace Salon is a boutique hair salon in Austin, TX — precision cuts, lived-in color, bridal styling, and a calm, unhurried chair.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fdf8f6;--card:#ffffff;--ink:#33222e;--muted:#8a6f7d;--line:#f0e2e6;--accent:#b04a6e;--accent-dark:#8f3657;--gold:#c89b3c;--dark:#33222e}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:50;background:rgba(253,248,246,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;flex-wrap:wrap}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:'Fraunces',serif;font-size:1.35rem;font-weight:700}
+  .logo svg{width:40px;height:40px;flex-shrink:0}
+  .nav-links{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+  .nav-links a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;padding:12px 26px;border-radius:999px;transition:.2s;border:2px solid var(--accent)}
+  .btn:hover{background:var(--accent-dark);border-color:var(--accent-dark)}
+  .btn-outline{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+  .btn-outline:hover{background:var(--ink);color:#fff}
+  .btn-sm{padding:9px 20px;font-size:.9rem}
+  .hero{position:relative;border-radius:24px;overflow:hidden;margin:32px 0 56px;min-height:480px;display:flex;align-items:flex-end}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(30,10,20,.82),rgba(30,10,20,.15) 60%)}
+  .hero-content{position:relative;z-index:1;padding:48px;color:#fff;max-width:640px}
+  .hero-content .tag{display:inline-block;background:var(--accent);color:#fff;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:16px}
+  .hero-content h1{font-family:'Fraunces',serif;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;margin-bottom:14px}
+  .hero-content p{font-size:1.05rem;opacity:.92;margin-bottom:24px}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-btns .btn-outline{color:#fff;border-color:#fff}
+  .hero-btns .btn-outline:hover{background:#fff;color:var(--ink)}
+  section{margin-bottom:64px}
+  .section-head{text-align:center;max-width:620px;margin:0 auto 36px}
+  .section-head .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .section-head h2{font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);line-height:1.2;margin-bottom:10px}
+  .section-head p{color:var(--muted)}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .about img{width:100%;border-radius:16px;object-fit:cover;height:340px}
+  .about h2{font-family:'Fraunces',serif;font-size:clamp(1.5rem,3vw,2rem);line-height:1.2;margin-bottom:14px}
+  .about p{color:var(--muted);margin-bottom:12px}
+  .about .facts{display:flex;gap:28px;margin-top:20px;flex-wrap:wrap}
+  .about .fact b{display:block;font-family:'Fraunces',serif;font-size:1.5rem;color:var(--accent)}
+  .about .fact span{font-size:.88rem;color:var(--muted)}
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .menu-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px}
+  .menu-card h3{font-family:'Fraunces',serif;font-size:1.2rem;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--accent)}
+  .dish{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+  .dish:last-child{border-bottom:none}
+  .dish .name{font-weight:600;font-size:.95rem}
+  .dish .desc{font-size:.85rem;color:var(--muted)}
+  .dish .price{font-weight:700;color:var(--accent);white-space:nowrap}
+  .stylists{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .stylist{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;text-align:center}
+  .stylist .initials{width:72px;height:72px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+  .stylist h3{font-family:'Fraunces',serif;font-size:1.15rem;margin-bottom:4px}
+  .stylist .role{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:8px}
+  .stylist p{font-size:.92rem;color:var(--muted)}
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .review{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px}
+  .review .stars{color:#e8a013;font-size:1.1rem;letter-spacing:2px;margin-bottom:10px}
+  .review p{font-size:.95rem;color:var(--muted);margin-bottom:14px}
+  .review .who{font-weight:700;font-size:.9rem}
+  .review .who span{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+  .visit{background:var(--dark);color:#f9f0f3;border-radius:20px;padding:48px 32px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .visit h2{font-family:'Fraunces',serif;font-size:1.6rem;margin-bottom:14px}
+  .visit p{opacity:.85;margin-bottom:8px}
+  .visit a{color:#f2a7bd;font-weight:600}
+  .visit .hours{width:100%;border-collapse:collapse}
+  .visit .hours td{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:.95rem}
+  .visit .hours td:last-child{text-align:right}
+  .cta{text-align:center}
+  .cta .btn{font-size:1.05rem;padding:15px 36px}
+  footer{border-top:1px solid var(--line);padding:28px 0 40px;text-align:center;font-size:.9rem;color:var(--muted)}
+  footer a{color:var(--ink);font-weight:600}
+  @media (max-width:860px){
+    .about,.visit{grid-template-columns:1fr}
+    .menu-grid,.reviews,.stylists{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+    .hero{min-height:380px}
+    .hero-content{padding:32px 24px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#b04a6e"/><path d="M24 8c-5 6-8 9.5-8 14a8 8 0 0 0 16 0c0-4.5-3-8-8-14z" fill="#fdf8f6"/><path d="M24 16c-2.4 3-4 5-4 7.5a4 4 0 0 0 8 0c0-2.5-1.6-4.5-4-7.5z" fill="#b04a6e"/><path d="M14 36c3-2.4 6.5-3.6 10-3.6S31 33.6 34 36" stroke="#fdf8f6" stroke-width="2.4" stroke-linecap="round" fill="none"/><path d="M24 32.4V38" stroke="#fdf8f6" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Luna &amp; Lace
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#stylists">Stylists</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+      <a class="btn btn-sm" href="tel:+15125550210">Book (512) 555-0210</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=2000&auto=format&fit=crop" alt="Bright styling chairs at Luna & Lace Salon">
+    <div class="hero-content">
+      <span class="tag">Hair salon · Austin</span>
+      <h1>Great hair, without the rush.</h1>
+      <p>A calm boutique salon on South Congress — precision cuts, lived-in color, and stylists who listen before they pick up the scissors.</p>
+      <div class="hero-btns">
+        <a class="btn" href="#services">See services &amp; prices</a>
+        <a class="btn btn-outline" href="tel:+15125550210">Book an appointment</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="about" id="about">
+    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1600&auto=format&fit=crop" alt="Stylist at work at Luna & Lace Salon">
+    <div>
+      <h2>A small salon with a slow, careful chair.</h2>
+      <p>We take on fewer clients a day on purpose — so every cut gets a real consultation, every color gets a strand test, and nobody ever feels rushed out the door.</p>
+      <p>From soft blonding to sharp bobs to bridal mornings, our stylists work with your hair's texture, your routine, and your budget.</p>
+      <div class="facts">
+        <div class="fact"><b>4.9 ★</b><span>480+ client reviews</span></div>
+        <div class="fact"><b>6</b><span>Senior stylists</span></div>
+        <div class="fact"><b>2020</b><span>Serving Austin since</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-head">
+      <span class="eyebrow">Services &amp; Prices</span>
+      <h2>Clear prices, no surprises</h2>
+      <p>Every service starts with a consultation and ends with a styling lesson, so you can recreate it at home.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3>Cuts &amp; Styling</h3>
+        <div class="dish"><div><div class="name">Signature Cut</div><div class="desc">Consultation, wash, cut, blow-dry finish</div></div><div class="price">$65</div></div>
+        <div class="dish"><div><div class="name">Precision Bob / Pixie</div><div class="desc">Sharp shapes, detailed finishing</div></div><div class="price">$58</div></div>
+        <div class="dish"><div><div class="name">Blowout &amp; Style</div><div class="desc">Smooth, curled, or lived-in waves</div></div><div class="price">$45</div></div>
+        <div class="dish"><div><div class="name">Kids Cut (under 12)</div><div class="desc">Patient first cuts and trims</div></div><div class="price">$35</div></div>
+      </div>
+      <div class="menu-card">
+        <h3>Color</h3>
+        <div class="dish"><div><div class="name">Balayage / Lived-In Color</div><div class="desc">Hand-painted dimension, gloss finish</div></div><div class="price">from $145</div></div>
+        <div class="dish"><div><div class="name">Full Color / Grey Coverage</div><div class="desc">Root-to-tip color with bond care</div></div><div class="price">from $95</div></div>
+        <div class="dish"><div><div class="name">Highlights / Babylights</div><div class="desc">Partial or full foil, toner included</div></div><div class="price">from $120</div></div>
+        <div class="dish"><div><div class="name">Gloss &amp; Tone</div><div class="desc">Shine refresh between color visits</div></div><div class="price">$55</div></div>
+      </div>
+      <div class="menu-card">
+        <h3>Special Occasions</h3>
+        <div class="dish"><div><div class="name">Bridal Styling</div><div class="desc">Trial + wedding-day updo, on location available</div></div><div class="price">from $180</div></div>
+        <div class="dish"><div><div class="name">Event Updo</div><div class="desc">Formal styling for parties and photos</div></div><div class="price">$75</div></div>
+        <div class="dish"><div><div class="name">Deep Conditioning Ritual</div><div class="desc">Bond repair mask, scalp massage, steam</div></div><div class="price">$40</div></div>
+        <div class="dish"><div><div class="name">Keratin Smoothing</div><div class="desc">Frizz control that lasts up to 3 months</div></div><div class="price">from $220</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stylists">
+    <div class="section-head">
+      <span class="eyebrow">Meet the Stylists</span>
+      <h2>Ask for them by name</h2>
+      <p>Every stylist at Luna &amp; Lace is a senior stylist — no juniors, no hand-offs mid-appointment.</p>
+    </div>
+    <div class="stylists">
+      <div class="stylist">
+        <div class="initials">MR</div>
+        <h3>Maya Reyes</h3>
+        <div class="role">Founder · Color Specialist</div>
+        <p>Balayage and lived-in blonding. Twelve years behind the chair, six of them in Austin.</p>
+      </div>
+      <div class="stylist">
+        <div class="initials">JT</div>
+        <h3>Jordan Taylor</h3>
+        <div class="role">Precision Cuts</div>
+        <p>Bobs, pixies, and curly cuts. Known for cuts that still look right six weeks later.</p>
+      </div>
+      <div class="stylist">
+        <div class="initials">AK</div>
+        <h3>Ana Kim</h3>
+        <div class="role">Bridal &amp; Occasions</div>
+        <p>Updos and bridal mornings for 200+ Austin weddings. Calm under pressure, always on time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="section-head">
+      <span class="eyebrow">Client Reviews</span>
+      <h2>Austin keeps coming back</h2>
+      <p>4.9 out of 5 from more than 480 clients.</p>
+    </div>
+    <div class="reviews">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Maya is the first colorist who actually listened. My balayage grows out beautifully — I have not touched it up in four months."</p>
+        <div class="who">Sarah L.<span>Austin · Google review</span></div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"The most relaxing salon I have ever been to. No rushing, no upselling — just a great cut and a stylist who remembers how I like it."</p>
+        <div class="who">Emily C.<span>South Austin · Google review</span></div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Ana did my hair for my wedding and my mom's. She was calm, on time, and the photos are perfect. I recommend her to everyone."</p>
+        <div class="who">Rachel M.<span>Round Rock · Google review</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div>
+      <h2>Come say hello</h2>
+      <p>1204 South Congress Avenue<br>Austin, TX 78704</p>
+      <p><a href="tel:+15125550210">(512) 555-0210</a></p>
+      <p>Appointments recommended — walk-ins welcome when a chair is free.</p>
+    </div>
+    <div>
+      <table class="hours">
+        <tr><td>Tuesday – Friday</td><td>9:00 AM – 7:00 PM</td></tr>
+        <tr><td>Saturday</td><td>9:00 AM – 5:00 PM</td></tr>
+        <tr><td>Sunday – Monday</td><td>Closed</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="cta">
+    <a class="btn" href="tel:+15125550210">Book your chair — (512) 555-0210</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Luna &amp; Lace Salon · Austin, TX</p>
+    <p>Website designed &amp; built by <a href="https://weblodge.agency" target="_blank" rel="noopener">Weblodge Agency</a></p>
+  </div>
+</footer>
+</body>
+</html>
